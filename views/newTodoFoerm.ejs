@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body class="bg-white text-gray-200 dark:bg-gray-900 dark:text-white">
+    <%- include('./partials/navbar.ejs') %>
+    <%- include('./partials/alertMessage.ejs') %>
+    <h2 class="text-2xl text-center m-3 text-violet-700">
+      Create your Account
+    </h2>
+    <fieldset
+      class="max-w-md items-center border border-solid border-gray-800 p-4 m-auto rounded-lg"
+    >
+      <form method="post" action="/auth/signup">
+        <div class="mb-6">
+          <label
+            for="title"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Title</label
+          >
+          <input
+            type="text"
+            id="title"
+            name="title"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Todo title"
+            required
+          />
+        </div>
+
+        <div class="mb-6">
+          <label
+            for="description"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Description</label
+          >
+          <textarea
+            id="message"
+            rows="4"
+            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Write your description here..."
+          ></textarea>
+        </div>
+        
+
+        <button
+          type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Add Todo
+        </button>
+      </form>
+    </fieldset>
+  </body>
+</html>

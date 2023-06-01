@@ -1,0 +1,52 @@
+<% todos.forEach(todo => { %>
+<div
+  class="border border-solid border-gray-600 rounded-md px-4 py-2 flex flex-row items-center justify-between w-full m-auto"
+  id="todo-<%= todo.id %>"
+>
+  <div class="rounded-full relative bg-gray-900">
+    <div class="flex gap-2 items-center">
+      <div class="group cursor-pointer">
+        <div
+          class="box hidden z-50 group-hover:block group-hover:absolute text-gray-300 bg-gray-950 p-2 top-8 rounded-md"
+        >
+          Mark as <span class="status"><% if (todo.status == 1 ) { %> Pending <% } else{%> Completed<%}%></span
+          >
+        </div>
+        <input type="checkbox" name="todo" id="<%= todo.id %>" class="w-5
+        mt-[2px] h-5 mr-2 accent-green-700 text-gray-800 bg-gray-900
+        border-gray-300 dark:bg-gray-900 dark:border-gray-600 rounded-md" <% if
+        (todo.status == 1) { %> checked <% } %> />
+      </div>
+
+      <div class="todo-title ml-1 text-base cursor-default" id=""><%= todo.title %></div>
+      <div class="todo-description hidden"><%=todo.description%></div>
+    </div>
+  </div>
+  <div class="flex ml-2 items-center justify-between">
+    <div class="group rounded-full relative">
+      <div
+        class="box hidden z-50 group-hover:block group-hover:absolute text-gray-300 bg-gray-950 p-2 top-8 rounded-md"
+      >
+        Edit
+      </div>
+      <button
+        class="edit-btn h-min text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-md text-sm px-4 py-1 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+      >
+        <i class="edit-btn fa-solid fa-pen-to-square"></i>
+      </button>
+    </div>
+    <div class="group rounded-full relative">
+      <div
+        class="box hidden z-50 group-hover:block group-hover:absolute text-gray-300 bg-gray-950 p-2 top-8 rounded-md"
+      >
+        Delete
+      </div>
+      <button
+        class="delete-btn h-min focus:outline-none text-white border border-red-400 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-4 py-1 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+      >
+        <i class="delete-btn fa-solid fa-trash"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<% }) %>

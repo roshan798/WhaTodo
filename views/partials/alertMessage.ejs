@@ -1,0 +1,21 @@
+<% if (typeof message !== 'undefined' && message.length > 0) { %>
+  <% if (isSuccess=='true') { %>
+    <div class="w-full mb-4 sm:max-w-md mx-6  px-4 py-1 sm:mx-auto text-base  rounded-lg bg-green-50 dark:bg-gray-800 border border-solid border-gray-500 relative" role="alert" id="alert">
+      <span class="block sm:inline text-green-800 dark:text-green-400"><%= message[0] %></span> <!-- Access message[0] to display the flash message -->
+  <% } else {%>
+    <div class="w-full mb-4 sm:max-w-md mx-6 px-4 py-1 sm:mx-auto text-base  rounded-lg bg-red-50 dark:bg-gray-800 border border-solid border-gray-500 relative " role="alert" id="alert">
+      <span class="block sm:inline text-red-800 dark:text-red-400"><%= message[0] %></span> <!-- Access message[0] to display the flash message -->
+    <%}%>
+    <span class="absolute top-0 bottom-0 right-0 px-4 py-1" onclick="removeAlert()">
+      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+    </span>
+  </div>
+<% } %>
+
+
+  <script>
+    function removeAlert(){
+        document.getElementById('alert')
+        .remove();
+    }
+  </script>
