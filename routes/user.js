@@ -41,7 +41,7 @@ router.post('/new', isUserAuthenticated, async (req, res) => {
 
         let taskId = await taskdb.addTodo(todo[0]);
         todo[0].id = taskId;
-        fs.readFile(path.join(__dirname, '../src/partials/todo.ejs'), 'utf-8', (err, template) => {
+        fs.readFile(path.join(__dirname, '../views/partials/todo.ejs'), 'utf-8', (err, template) => {
             if (err) {
                 console.error(err);
                 return res.status(500).json({ error: 'Internal server error' });
